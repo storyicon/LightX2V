@@ -10,7 +10,12 @@
     "sample_guide_scale": 6,
     "sample_shift": 8,
     "enable_cfg": true,
-    "cpu_offload": false,
+    "cpu_offload": true,
+    "offload_granularity": "block",
+    "offload_ratio": 1.0,
+    "lazy_load": false,
+    "t5_cpu_offload": false,
+    "t5_offload_granularity": "model",
     "parallel": {
         "seq_p_size": 4,
         "seq_p_attn_type": "ulysses"

@@ -33,11 +33,8 @@ classifiers = [
 dependencies = [
     "numpy",
     "scipy",
-    "torch<=2.8.0",
-    "torchvision<=0.23.0",
-    "torchaudio<=2.8.0",
     "diffusers",
-    "transformers",
+    "transformers==5.1.0",
     "tokenizers",
     "tqdm",
     "accelerate",
@@ -67,6 +64,9 @@ dependencies = [
     "decord",
     "av",
     "torchada>=0.1.10",
+    "vllm==0.10.0",
+    "sageattention>=1.0.6",
+    "flashinfer-python>=0.6.4",
 ]
 
 [project.urls]

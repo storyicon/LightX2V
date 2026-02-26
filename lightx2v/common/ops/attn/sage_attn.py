@@ -5,25 +5,7 @@ from lightx2v.utils.registry_factory import ATTN_WEIGHT_REGISTER
 
 from .template import AttnWeightTemplate
 
-capability = torch.cuda.get_device_capability(0) if torch.cuda.is_available() else None
-if capability in [(8, 9), (12, 0)]:
-    try:
-        from sageattention import sageattn_qk_int8_pv_fp16_triton as sageattn
-    except ImportError:
-        logger.info("sageattn not found, please install sageattention first")
-        sageattn = None
-else:
-    try:
-        from sageattention import sageattn
-    except ImportError:
-        logger.info("sageattn not found, please install sageattention first")
-        sageattn = None
-
-try:
-    from sageattn3 import sageattn3_blackwell
-except ImportError:
-    logger.info("sageattn3 not found, please install sageattention first")
-    sageattn3_blackwell = None
+from sageattention import sageattn
 
 
 @ATTN_WEIGHT_REGISTER("sage_attn2")
